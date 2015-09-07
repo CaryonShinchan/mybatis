@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>     
+<!DOCTYPE configuration PUBLIC     
+    "-//mybatis.org//DTD Config 3.0//EN"     
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 数据库配置文件 -->
+	<properties resource="jdbc.resource" />
+
+	<!-- 配置数据库连接信息 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<!-- 数据库驱动 -->
+				<property name="driver" value="${driver}" />
+				<!-- 数据库连接 -->
+				<property name="url" value="${url}" />
+				<!-- 用户名 -->
+				<property name="userName" value="${userName}" />
+				<!-- 密码 -->
+				<property name="passWord" value="${passWord}" />
+				<!-- 初始化连接大小 -->
+				<property name="initialSize" value="${initialSize}"></property>
+				<!-- 连接池最大数量 -->
+				<property name="maxActive" value="${maxActive}"></property>
+				<!-- 连接池最大空闲 -->
+				<property name="maxIdle" value="${maxIdle}"></property>
+				<!-- 连接池最小空闲 -->
+				<property name="minIdle" value="${minIdle}"></property>
+				<!-- 获取连接最大等待时间 -->
+				<property name="maxWait" value="${maxWait}"></property>
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- SQL语句配置文件 -->
+	<mappers>
+		<mapper resource="com/shinchan/domain/UserMapper.xml" />
+	</mappers>
+
+</configuration>
