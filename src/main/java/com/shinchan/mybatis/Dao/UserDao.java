@@ -1,4 +1,4 @@
-package com.shinchan.mybatis.Dao;
+package com.shinchan.mybatis.dao;
 
 import java.util.List;
 
