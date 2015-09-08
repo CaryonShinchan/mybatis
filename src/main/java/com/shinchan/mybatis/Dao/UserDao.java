@@ -24,26 +24,26 @@ public interface UserDao {
 	 * @param id
 	 * @return
 	 */
-	public Boolean deleteUserById(int id);
+	public boolean deleteUserById(int id);
 
 	/**
 	 * 删除选中的用户
 	 * @param ids id数组
 	 * @return
 	 */
-	public Boolean deleteSelectedUser(int[] ids);
+	public void deleteSelectedUser(int[] ids);
 
 	/**
 	 * 通过id修改用户
 	 * @param id
 	 * @return
 	 */
-	public Boolean updateUserById(int id);
+	public void updateUserById(User user);
 
 	/**
 	 * 添加用户
 	 * @param user
 	 * @return
 	 */
-	public Boolean addUser(User user);
+	public void addUser(User user);
 }

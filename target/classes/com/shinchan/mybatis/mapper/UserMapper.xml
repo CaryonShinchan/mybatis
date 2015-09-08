@@ -8,14 +8,31 @@
 		<result column="phone" property="phone" jdbcType="VARCHAR" />
 	</resultMap>
 
-	<sql id="user_column">
-		id, name, age, phone
-	</sql>
+	<sql id="user_column">id, name, age, phone</sql>
 
 	<select id="getUserById" resultMap="UserMap" parameterType="java.lang.Integer">
 		select
 		<include refid="user_column" />
 		from user where id = #{id}
 	</select>
+	
+	<select id="getAllUser" resultMap="UserMap">
+		select
+		<include refid="user_column" />
+		from user
+	</select>
+	
+	<insert id="addUser" parameterType="com.shinchan.mybatis.domain.User">
+<!-- 		insert into user(<include refid="user_column" />)values (#{id}, #{name}, #{age}, #{phone}) -->
+		insert into user(name, age, phone) values (#{name}, #{age}, #{phone})
+	</insert>
+	
+	<delete id="deleteUserById" parameterType="java.lang.Integer">
+		delete from user where id = #{id}
+	</delete>
+	
+	<update id="updateUserById" parameterType="com.shinchan.mybatis.domain.User">
+		update user set name = #{name }, age = #{age}, phone = #{phone} where id = #{id}
+	</update>
 
 </mapper>

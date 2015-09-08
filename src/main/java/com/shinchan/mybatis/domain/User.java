@@ -9,6 +9,16 @@ public class User {
 	private Integer age;
 
 	private String phone;
+	
+	public User() {
+		
+	}
+
+	public User(String name, Integer age, String phone) {
+		this.name = name;
+		this.age = age;
+		this.phone = phone;
+	}
 
 	public Integer getId() {
 		return id;
@@ -40,5 +50,10 @@ public class User {
 
 	public void setPhone(String phone) {
 		this.phone = phone == null ? null : phone.trim();
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", age=" + age + ", phone=" + phone + "]";
 	}
 }
